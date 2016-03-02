@@ -1,0 +1,3 @@
+# GoL
+
+Gutta må jobbe
