@@ -23,11 +23,12 @@ public class GameOfLife extends Application {
     private static final int SIZE = 400;
     //board size will then be WIDTH_HEIGHT/SIZE
     //SETTINGSSIZE is used to set the size of the big pane outside the gameboardpane
-    private static final int SETTINGSSIZE = SIZE+100;
     private static final int TIME = 80;
+    
+    private static final int SETTINGSSIZE = SIZE+100;
 
     private Map<String, StackPane> boardMap = new HashMap<>();
-    private Board board = new Board(SIZE /10);
+    private Board board = new Board(SIZE /WIDTH_HEIGHT);
 
     @Override
     public void start(Stage primaryStage) {
