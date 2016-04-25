@@ -36,8 +36,6 @@ public class GameOfLife extends Application {
     private static final int SIZE = 600;
     private static final int TIME = 80;
 
-    private static final int SETTINGSSIZE = SIZE+100;
-
     private Map<String, StackPane> boardMap = new HashMap<>();
     private Board board = new Board(SIZE / WIDTH_HEIGHT);
 
