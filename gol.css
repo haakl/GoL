@@ -1,15 +1,18 @@
 .root {
-    -fx-fill: white;
+    -fx-background-image: url("/img/colorgradient.gif");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover;
 }
 
 .alive {
-    -fx-background-color: orangered;
+    -fx-background-color: transparent;
     -fx-border-color: black;
     -fx-border-width: 0.1;
 }
 
 .dead {
-    -fx-background-color: black;
+    -fx-background-color: rgba(7, 10, 25, 0.95);
     -fx-border-color: dimgrey;
     -fx-border-width: 0.1;
 }
