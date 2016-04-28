@@ -1,5 +1,6 @@
 .root {
-    -fx-background-image: url("/img/colorgradient.gif");
+    /*-fx-background-image: url("/img/colorgradient.gif");*/
+    -fx-background-color: #ebebeb;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
     -fx-background-size: cover;
