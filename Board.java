@@ -5,7 +5,7 @@ import java.util.Random;
 public class Board {
 
     /**
-     * Creates a int array to store the cells value (alive or dead)
+     * Creates an int array to store the cells value (alive or dead)
      */
     private int[][] board;
 
@@ -139,7 +139,6 @@ public class Board {
         if(aliveOrDead==1 && neighbours>3) {
             //setField(x, y, 0); //If there is more than three alive neihgbors around a living cell it dies
             newBoard[x][y] = 0;
-            return;
         }
 
     }
