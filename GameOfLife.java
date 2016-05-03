@@ -38,10 +38,14 @@ public class GameOfLife extends Application {
     private int WIDTH_HEIGHT = 8;
     private int SIZE = 600;
     private int TIME = 100;
+    public static final int CELLCOUNT = SIZE / WIDTH_HEIGHT;
 
     private Map<String, StackPane> boardMap = new HashMap<>();
     private Board board;
     Timeline timeline;
+    
+    private FileChooser fileChooser;
+    public File file;
 
     private void startGame(Stage primaryStage) {
         timeline = new Timeline(new KeyFrame(Duration.ZERO, event -> iterateBoard()), new KeyFrame(Duration.millis(TIME)));
