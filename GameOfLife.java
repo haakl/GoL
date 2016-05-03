@@ -133,6 +133,40 @@ public class GameOfLife extends Application {
         cellField.setLayoutY(175);
         cellField.setPromptText("Enter cell size (low values may cause lag)");
         cellField.getStyleClass().add("cellField");
+        
+        TextField field = new TextField();
+            field.setPromptText("Paste URL address here");
+            field.setOnKeyPressed(new EventHandler<KeyEvent>(){
+                @Override
+                public void handle(KeyEvent e){
+                    if(e.getCode() == KeyCode.ENTER){
+                        board.RunLengthEncoding(field.getText());
+                        iterateBoard();
+                    }
+                }
+            });
+        root.getChildren().add(field);
+        field.setLayoutX(SIZE+1);
+        field.setLayoutY(115);
+
+        fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All files", "*.*")
+        );
+
+        Button browse = new Button();
+        browse.setText("Browse");
+        root.getChildren().add(browse);
+        browse.setLayoutX(SIZE + 50);
+        browse.setLayoutY(150);
+        browse.setOnAction(e -> {
+            file = fileChooser.showOpenDialog(primaryStage);
+            if (file != null) {
+                String filePath = file.getAbsolutePath();
+                board.RunLengthEncodingFromFile(filePath);
+                iterateBoard();
+            }
+        });
 
         /**
          * the for-loop below creates a board with dead cells
