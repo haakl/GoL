@@ -1,13 +1,14 @@
 .root {
-    -fx-background-image: url("/img/colorgradient.gif");
+    /*-fx-background-image: url("/img/colorgradient.gif");*/
+    -fx-background-color: #ebebeb;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
     -fx-background-size: cover;
 }
 
 .alive {
-    -fx-background-color: transparent;
-    -fx-border-color: black;
+    -fx-background-color: skyblue;
+    -fx-background-radius: 200px;
     -fx-border-width: 0.1;
 }
 
@@ -15,4 +16,110 @@
     -fx-background-color: rgba(7, 10, 25, 0.95);
     -fx-border-color: dimgrey;
     -fx-border-width: 0.1;
+}
+
+.step {
+    -fx-min-width: 110px;
+    -fx-background-color: aliceblue;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.step:hover {
+    -fx-min-width: 110px;
+    -fx-background-color: lightblue;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.step:pressed{
+    -fx-min-width: 110px;
+    -fx-background-color: lightblue;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, -1, -1)
+}
+
+.stop {
+    -fx-min-width: 110px;
+    -fx-background-color: indianred;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.stop:hover {
+    -fx-min-width: 110px;
+    -fx-background-color: darkred;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.stop:pressed {
+    -fx-min-width: 110px;
+    -fx-background-color: darkred;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, -1, -1)
+}
+
+.play {
+    -fx-min-width: 110px;
+    -fx-background-color: lightgreen;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.play:hover {
+    -fx-min-width: 110px;
+    -fx-background-color: mediumseagreen;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.play:pressed {
+    -fx-min-width: 110px;
+    -fx-background-color: mediumseagreen;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, -1, -1)
+}
+
+.clear {
+    -fx-min-width: 110px;
+    -fx-background-color: aliceblue;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.clear:hover {
+    -fx-min-width: 110px;
+    -fx-background-color: lightblue;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.clear:pressed {
+    -fx-min-width: 110px;
+    -fx-background-color: lightblue;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, -1, -1)
+}
+
+.random {
+    -fx-min-width: 250px;
+    -fx-min-height: 50px;
+    -fx-background-color: aliceblue;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.random:hover {
+    -fx-min-width: 250px;
+    -fx-min-height: 50px;
+    -fx-background-color: lightblue;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, 1, 1)
+}
+.random:pressed {
+    -fx-min-width: 250px;
+    -fx-min-height: 50px;
+    -fx-background-color: lightblue;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, #071224, 5, 0.1, -1, -1)
+}
+
+.sizeField {
+    -fx-min-width: 250px;
+}
+
+.cellField {
+    -fx-min-width: 250px;
 }
