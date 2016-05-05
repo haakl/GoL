@@ -1,0 +1,32 @@
+-Planlegging
+	Sammarbeidet på tegning av skisse til GUI samt. planlegging av UML.
+	Oblig 1.
+	
+-Implementering av spillreglene
+	Hieu - implementerte reglene til GOL ved hjelp av if-setninger. 
+ 	
+-Oppbretting av brett
+	Vegar - implementerte 2D-brettet ved hjelp av array
+
+-Visualisering av spillet
+	Alle tre sammarbeidet 
+
+-GUI 
+	Vegard og Hieu
+
+-CSS
+	Vegard - bruker css til gjøre spillet finere 
+
+-Filbehanding -lese RLE
+	Haakon
+
+-Javadoc
+	Alle tre
+
+
+
+Vegard Sørlie
+
+Haakon Lien
+
+Hieu Tan Duong
