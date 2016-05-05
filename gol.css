@@ -7,9 +7,11 @@
 }
 
 .alive {
-    -fx-background-color: linear-gradient(#4caf50 25%, #bbdefb 75%, #4caf50 100%);
+    -fx-background-image: url("/img/cell.jpg");
+    -fx-background-size: cover;
+    /*-fx-background-color: linear-gradient(#4caf50 25%, #bbdefb 75%, #4caf50 100%);
     -fx-border-color: dimgray;
-    -fx-border-width: 0.1;
+    -fx-border-width: 0.1;*/
 }
 
 .dead {

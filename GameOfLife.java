@@ -140,7 +140,6 @@ public class GameOfLife extends Application {
                     }
                 }
                 else {
-                    SIZE = 600;
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setTitle("Whoops!");
                     alert.setContentText("Please input a size between 10 and "+(900)+". Board size has been reset to default");
@@ -154,7 +153,6 @@ public class GameOfLife extends Application {
         sizeField.setLayoutY(125);
         sizeField.setPromptText("Enter board size (e.g 800)");
         sizeField.getStyleClass().add("sizeField");
-
 
         javafx.scene.control.TextField cellField = new javafx.scene.control.TextField();
         cellField.setOnKeyPressed(e -> {
@@ -196,9 +194,10 @@ public class GameOfLife extends Application {
         cellField.getStyleClass().add("cellField");
 
         TextField field = new TextField();
-        field.setPromptText("Paste URL address here and press enter");
+        field.setPromptText("Paste URL address for RLE here and press enter");
         field.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.ENTER){
+                clearBoard();
                 board.RunLengthEncoding(field.getText());
                 iterateBoard();
             }
@@ -222,6 +221,7 @@ public class GameOfLife extends Application {
         browse.setOnAction(e -> {
             file = fileChooser.showOpenDialog(primaryStage);
             if (file != null) {
+                clearBoard();
                 String filePath = file.getAbsolutePath();
                 board.RunLengthEncodingFromFile(filePath);
                 iterateBoard();
@@ -265,7 +265,7 @@ public class GameOfLife extends Application {
                 System.out.println("x = " + x);
                 System.out.println("y = " + y);
 
-                if (x > SIZE / WIDTH_HEIGHT - 5 || y > SIZE / WIDTH_HEIGHT - 5 || x < 0 || y < 0) {
+                if (x > SIZE / WIDTH_HEIGHT || y > SIZE / WIDTH_HEIGHT || x < 0 || y < 0) {
 
                 } else {
                     board.setStateOnClick(x, y);
@@ -281,7 +281,7 @@ public class GameOfLife extends Application {
                 int x = (int) Math.floor(event.getX())/WIDTH_HEIGHT;
                 int y = (int) Math.floor(event.getY())/WIDTH_HEIGHT;
 
-                if (x > SIZE / WIDTH_HEIGHT - 5 || y > SIZE / WIDTH_HEIGHT - 5 || x < 0 || y < 0) {
+                if (x > SIZE / WIDTH_HEIGHT || y > SIZE / WIDTH_HEIGHT || x < 0 || y < 0) {
 
                 } else {
                     board.setStateOnClick(x, y);
@@ -293,7 +293,7 @@ public class GameOfLife extends Application {
         primaryStage.setTitle("Game of Life");
         primaryStage.setScene(scene);
         primaryStage.show();
-        primaryStage.setMinHeight(510);
+        primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(SIZE+310);
 
     }

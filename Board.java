@@ -209,6 +209,7 @@ public class Board {
         int m = Integer.parseInt(value[0]); //width
         int n = Integer.parseInt(value[1]); //height
 
+        GameOfLife.CELLCOUNT = GameOfLife.SIZE / GameOfLife.WIDTH_HEIGHT;
         if (m > GameOfLife.CELLCOUNT || n > GameOfLife.CELLCOUNT) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
@@ -238,7 +239,7 @@ public class Board {
             } else {
                 charID++; //next character
                 stringInt = Integer.parseInt(character + ""); //parseInt to make character an int
-                board[y+startY][x+startX] = stringInt; //define dead or alive cell at target cell.
+                board[y + startY][x + startX] = stringInt; //define dead or alive cell at target cell.
             }
         }
     }
@@ -247,16 +248,23 @@ public class Board {
         String res = "";
         String numberBufferString;
         int numberBuffer = 0;
+        String dual = "";
+        String dual2 = "";
+        String dual3 = "";
         //runs the for-loop until all characters of source has been "checked".
         for (int i = 0; i < source.length(); i++) {
             if (source.charAt(i) == '!') {    //if we reach the '!', we know to stop the loop.
                 res += source.charAt(i);
                 break;
             }
-            String dual = "" + source.charAt(i + 1);  //this was only required to parseInt a character and will only
+            dual = "" + source.charAt(i + 1);  //this was only required to parseInt a character and will only
             //be used if two numbers in a row.
-            String dual2 = "" + source.charAt(i + 2); //Same as above but with three numbers in a row
-            //String dual3 = "" + source.charAt(i + 3); //four numbers in a row
+            if (i + 3 <= source.length()) {
+                dual2 = "" + source.charAt(i + 2); //Same as above but with three numbers in a row
+            }
+            if (i + 4 <= source.length()) {
+                dual3 = "" + source.charAt(i + 3); //four numbers in a row
+            }
 
             if (source.charAt(i) != 'o' && source.charAt(i) != 'b' && source.charAt(i) != '$' && source.charAt(i) != '!') {
                 numberBufferString = "" + source.charAt(i);
@@ -325,7 +333,7 @@ public class Board {
                                 res += source.charAt(i + 3);
                             }
                             i += 3;
-                        }/* else if (Integer.parseInt(dual3) <= 9) {
+                        } else if (Integer.parseInt(dual3) <= 9) {
                             if (source.charAt(i + 4) == 'b') {
                                 numberBufferString = "" + source.charAt(i) + source.charAt(i + 1) + source.charAt(i + 2) + source.charAt(i + 3);
                                 numberBuffer = Integer.parseInt(numberBufferString);
@@ -348,7 +356,7 @@ public class Board {
                                 }
                                 i += 4;
                             }
-                        }*/
+                        }
                     }
                 }
             }
